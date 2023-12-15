@@ -25,15 +25,11 @@ if __name__ == "__main__":
     filename = sys.argv[1]
     sum = 0
     with open(filename, 'r') as file:
-        line: str
-
-        line = file.readline()
-        while (line):
+        for line in file:
             matches: Iterable[str]
             matches = list(map(f, re.findall(pattern, line)))
             if not matches:
                 continue
             sum += int(matches[0] + matches[-1])
-            line = file.readline()
 
     print(sum)

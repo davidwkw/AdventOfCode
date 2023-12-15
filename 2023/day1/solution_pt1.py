@@ -12,10 +12,7 @@ if __name__ == "__main__":
     filename = sys.argv[1]
     sum = 0
     with open(filename, 'r') as file:
-        line: str
-
-        line = file.readline()
-        while (line):
+        for line in file:
             sum_string: str
             sum_string = ''
             match = re.search(r"\d", line)
@@ -26,6 +23,5 @@ if __name__ == "__main__":
             match = re.search(r"\d", line)
             sum_string += match.group()
             sum += int(sum_string)
-            line = file.readline()
 
     print(sum)
