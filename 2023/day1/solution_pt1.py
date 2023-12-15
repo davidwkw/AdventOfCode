@@ -10,8 +10,7 @@ if __name__ == "__main__":
     sum: int = 0
     with open(filename, 'r') as file:
         for line in file:
-            sum_string: str
-            sum_string = ''
+            sum_string: str = ''
             match = re.search(r"\d", line)
             if match == None:
                 continue
