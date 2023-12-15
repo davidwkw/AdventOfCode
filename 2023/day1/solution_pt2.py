@@ -16,7 +16,7 @@ def f(x: str) -> str:
 
 if __name__ == "__main__":
     if (len(sys.argv) != 2):
-        print("Invalid number of arguments. File path should follow script name. I.e. <day1>.py filename")
+        print("Invalid number of arguments. File path should follow script name. I.e. <day2>.py filename")
 
     sum: int
     filename: str
