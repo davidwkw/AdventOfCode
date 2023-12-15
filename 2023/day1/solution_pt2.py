@@ -19,11 +19,8 @@ if __name__ == "__main__":
         print("Invalid number of arguments. File path should follow script name. I.e. solution_pt2.py filename", file=sys.stderr)
         exit()
 
-    sum: int
-    filename: str
-
-    filename = sys.argv[1]
-    sum = 0
+    filename: str = sys.argv[1]
+    sum: int = 0
     with open(filename, 'r') as file:
         for line in file:
             matches: Iterable[str]
