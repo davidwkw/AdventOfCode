@@ -1,8 +1,8 @@
 import sys
 import re
-from collections.abc import Iterable
+import typing
 
-number_strings: Iterable[str] = "one two three four five six seven eight nine".split()
+number_strings: list[typing.LiteralString] = "one two three four five six seven eight nine".split()
 pattern: str = "(?=(" + "|".join(number_strings) + "|\\d))"
 
 def f(x: str) -> str:
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     sum: int = 0
     with open(filename, 'r') as file:
         for line in file:
-            matches: Iterable[str] = list(map(f, re.findall(pattern, line)))
+            matches: list[str] = list(map(f, re.findall(pattern, line)))
             if not matches:
                 continue
             sum += int(matches[0] + matches[-1])
