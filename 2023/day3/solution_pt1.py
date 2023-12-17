@@ -28,7 +28,6 @@ if __name__ == "__main__":
         while column_coord < len(content_list[row_coord]) and content_list[row_coord][column_coord].isdigit():
             value += content_list[row_coord][column_coord]
             column_coord += 1
-        print(value)
         sum += int(value)
 
     print(sum)
