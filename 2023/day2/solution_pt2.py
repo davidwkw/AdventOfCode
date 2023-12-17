@@ -43,9 +43,9 @@ if __name__ == "__main__":
     game_list: list[Game] = []
 
     with open(filename, 'r') as file:
+        current_game: Game
         for line in file:
-            game_list.append(parse_line(line))
-        for game in game_list:
-            set_power_sum += game['quantity']['red'] * game['quantity']['green'] * game['quantity']['blue']
+            current_game = parse_line(line)
+            set_power_sum += current_game['quantity']['red'] * current_game['quantity']['green'] * current_game['quantity']['blue']
 
     print(set_power_sum)
