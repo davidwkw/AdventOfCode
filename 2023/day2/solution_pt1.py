@@ -40,7 +40,6 @@ if __name__ == "__main__":
 
     filename: str = sys.argv[1]
     game_id_sum: int = 0
-    game_list: list[Game] = []
     CONSTRAINTS: dict[str, int] = {
         'red': 12,
         'green': 13,
@@ -48,10 +47,10 @@ if __name__ == "__main__":
     }
 
     with open(filename, 'r') as file:
+        current_game: Game
         for line in file:
-            game_list.append(parse_line(line))
-        for game in game_list:
-            if game['quantity']['red'] <= CONSTRAINTS['red'] and game['quantity']['blue'] <= CONSTRAINTS['blue'] and game['quantity']['green'] <= CONSTRAINTS['green']:
-                game_id_sum += game['game_id']
+            current_game = parse_line(line)
+            if current_game['quantity']['red'] <= CONSTRAINTS['red'] and current_game['quantity']['blue'] <= CONSTRAINTS['blue'] and current_game['quantity']['green'] <= CONSTRAINTS['green']:
+                game_id_sum += current_game['game_id']
 
     print(game_id_sum)
