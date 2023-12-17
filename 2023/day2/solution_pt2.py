@@ -40,7 +40,6 @@ if __name__ == "__main__":
 
     filename: str = sys.argv[1]
     set_power_sum: int = 0
-    game_list: list[Game] = []
 
     with open(filename, 'r') as file:
         current_game: Game
